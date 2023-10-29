@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h5>Counter app with js</h5>
+    <div>
+        <p>counter :<span id="counter"></span> </p>
+
+
+    </div>
+
+    <button id="btn">increase</button>
+
+    <button id="dBtn">decrease</button>
+
+    <script>
+
+        //selector
+        const counter = document.querySelector("#counter")
+        const increaseBtn = document.querySelector("#btn")
+        const decreaseBtn = document.querySelector("#dBtn")
+
+        let count = 0;
+
+        //increase function
+        const increaseCount = () => {
+            count++;
+        }
+
+        //decrease function
+        const decreaseCount = () => {
+            count--;
+        }
+
+        increaseBtn.addEventListener("click", event => {
+            increaseCount();
+            counter.innerText = count;
+        });
+
+        decreaseBtn.addEventListener("click", event => {
+            decreaseCount();
+            counter.innerText = count;
+
+            if (count <= -1){
+                counter.innerText=null;
+                count=0;
+            }
+        })
+    </script>
+</body>
+
+</html>
